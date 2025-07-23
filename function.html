@@ -1,0 +1,43 @@
+//Function scope
+//let a=10;
+function Say(){
+    let name="javascript"
+    console.log("Hai Global Scope");
+    console.log("Within the func"+name);
+}
+Say()
+console.log("Outside the func"+name);
+//Block scope
+//The Block scope of a variable means that variable is accesible
+//within the block that is between the curly braces.
+function voting(age){
+    if(age>=18){
+        var iscloudy=true;
+        var israining=true;
+        console.log("eligible")
+        console.log(iscloudy);
+    }
+    console.log(israining);
+    console.log(iscloudy);//throw err
+}
+voting(18)
+//Local scope (same as function or block scope depending on context)
+//callback function
+function text(){
+    console.log("message");
+}
+text();
+function send(callback){
+    console.log("message sended");
+    setInterval(callback,1000);
+}
+send(text);
+let count=0;
+let Interval=()=>{
+    count++;
+    console.log(count);
+    if(count<5){
+        Interval();
+    }
+}
+Interval();
