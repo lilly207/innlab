@@ -1,0 +1,17 @@
+1) Reverse a word in a sentence
+function reverseWords(sentence) {
+  return sentence.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+}
+console.log(reverseWords("hello world"));
+
+// 2) Remove duplicates from array
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+
+// 3) Count vowels
+function countVowels(str) {
+  return (str.match(/[aeiou]/gi) || []).length;
+}
+console.log(countVowels("OpenAI ChatGPT"));
